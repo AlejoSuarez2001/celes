@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Para Celes — Carta</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&family=Dancing+Script:wght@600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FBF7FF;
+            --paper: #FFFDF9;
+            --accent: #6B46FF;
+            --rose: #FF6B9A;
+            --muted: #6b6b7a;
+            --radius: 20px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+            background: radial-gradient(800px 400px at 10% 10%, rgba(107, 70, 255, 0.06), transparent),
+                linear-gradient(180deg, var(--bg), #FFF7FB);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+            color: #111;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 920px;
+            display: flex;
+            gap: 22px;
+            flex-direction: column;
+        }
+
+        .card {
+            background: linear-gradient(180deg, var(--paper), #FFF8F9);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: 0 20px 40px rgba(21, 16, 49, 0.06);
+            border: 1px solid rgba(16, 12, 38, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 8px
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--rose));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 34px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            font-size: 26px;
+            color: var(--accent);
+        }
+
+        .paper {
+            margin-top: 14px;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid rgba(16, 12, 38, 0.03);
+            background: linear-gradient(180deg, #fffefc, #fffaf8);
+            min-height: 420px;
+        }
+
+        .letter {
+            font-family: 'Georgia', 'Playfair Display', serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #222;
+            background: transparent;
+            border: 0;
+            outline: none;
+            resize: none;
+            width: 100%;
+            white-space: pre-wrap;
+        }
+
+        /* Estilo manuscrito en saludo y cierre */
+        .letter strong {
+            font-family: 'Dancing Script', cursive;
+            color: var(--rose);
+            font-size: 22px;
+        }
+
+        /* Capitular */
+        .letter p:first-letter {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--accent);
+            float: left;
+            margin-right: 6px;
+            line-height: 1;
+        }
+
+        .smallinfo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+            color: var(--muted);
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        .decor {
+            position: absolute;
+            right: -60px;
+            top: -40px;
+            opacity: 0.06;
+            font-size: 170px;
+            pointer-events: none
+        }
+
+        @media (max-width:520px) {
+            h1 {
+                font-size: 22px
+            }
+
+            .letter {
+                font-size: 16px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <main class="card">
+            <div class="decor">❤</div>
+            <div class="header">
+                <div class="logo">♥</div>
+                <h1>Para Celes</h1>
+            </div>
+
+            <section class="paper">
+                <div class="letter">
+                    <p><strong>Querida Boli:</strong></p>
+                    <p>
+                        Desde que te conocí, mi percepción sobre el amor cambió rotundamente. Nunca pensé que iba llegar
+                        a sentir algo por alguien como lo que siento por vos, porque sé que soy medio raro y eso hace
+                        que quizá me cueste llegar a conectar con alguien, pero vos me demostraste lo contrario. Con vos
+                        descubrí lo que es amar y, sobre todo, lo que es querer estar con una persona y tener plena
+                        confianza en ella para pasar el resto de mi vida.
+                    </p>
+
+                    <p>
+                        Quería decirte amor, que estoy muy orgulloso de nosotros pero, sobre todo, de vos, porque siento
+                        que en el último año creciste mucho como persona y profesionalmente. Arrancaste de cero y te
+                        rebuscaste vos sola haciendo de todo, creando contenido, haciendo trenzas, metiendo cursos de
+                        publicidad y más. Poco a poco se nota que tu esfuerzo, trabajo y constancia están valiendo la
+                        pena y eso me alegra muchísimo, porque sé que es difícil, pero vos le metiste aunque a veces
+                        parecía que dabas todo y no recibías nada. Es algo que realmente admiro de vos.
+                    </p>
+
+                    <p>
+                        Estoy muy contento de haberte podido acompañar en tu crecimiento y de que, al mismo tiempo, me
+                        enseñes a mí muchas cosas en el camino, sobre todo desde el lado sentimental. Al principio
+                        decíamos que éramos poco demostrativos y mirá ahora: yo escribiendo esto mientras me clavo un
+                        sanguche de dulce de leche que me regalaste para el desayuno.
+                    </p>
+
+                    <p>
+                        Quiero que sigamos creciendo y aprendiendo juntos en todos los ámbitos, y que nuestra relación
+                        siga siendo tan sana como es. Con vos me siento seguro y amado, siento que siempre voy a estar
+                        con vos, que nuestro humor es el mismo, que estamos en la misma sintonía y que vemos las cosas
+                        desde el mismo lugar. Quiero una vida con vos hasta que seamos viejitos y un día se nos ocurra
+                        poner <em>"If the world was ending"</em> para recordar estos momentos y emocionarnos con
+                        <u>NUESTRO tema</u>.
+                    </p>
+
+                    <p>
+                        <strong>Te amo</strong>, sos el amor de mi vida y siempre voy a estar para vos en todo lo que
+                        necesites.
+                    </p>
+
+                    <p><strong>Con mucho amor, el inge.</strong></p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>

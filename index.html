@@ -9,6 +9,9 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&family=Dancing+Script:wght@600&display=swap"
         rel="stylesheet">
     <style>
+        /* Box sizing global útil para evitar sorpresas en responsive */
+        *, *::before, *::after { box-sizing: border-box; }
+
         :root {
             --bg: #FBF7FF;
             --paper: #FFFDF9;
@@ -52,7 +55,7 @@
             display: flex;
             align-items: center;
             gap: 14px;
-            margin-bottom: 8px
+            margin-bottom: 8px;
         }
 
         .logo {
@@ -85,6 +88,7 @@
             min-height: 420px;
         }
 
+        /* Texto de la carta: quitar pre-wrap y permitir quiebres de palabra */
         .letter {
             font-family: 'Georgia', 'Playfair Display', serif;
             font-size: 18px;
@@ -95,7 +99,14 @@
             outline: none;
             resize: none;
             width: 100%;
-            white-space: pre-wrap;
+            white-space: normal;              /* <--- cambió de pre-wrap a normal */
+            overflow-wrap: anywhere;          /* permite romper palabras largas */
+            word-break: break-word;
+            hyphens: auto;                    /* rompe palabras con guiones si es posible */
+        }
+
+        .letter p {
+            margin: 0 0 1.05em 0;             /* separo párrafos con margen consistente */
         }
 
         /* Estilo manuscrito en saludo y cierre */
@@ -105,14 +116,14 @@
             font-size: 22px;
         }
 
-        /* Capitular */
+        /* Capitular (drop cap) con márgenes y line-height controlados para que no rompa las líneas */
         .letter p:first-letter {
-            font-size: 28px;
+            font-size: 2.1rem;
             font-weight: bold;
             color: var(--accent);
             float: left;
-            margin-right: 6px;
-            line-height: 1;
+            margin: 0.08rem 0.6rem 0 0;
+            line-height: 0.9; /* ajusta la altura visual del drop cap */
         }
 
         .smallinfo {
@@ -131,17 +142,19 @@
             top: -40px;
             opacity: 0.06;
             font-size: 170px;
-            pointer-events: none
+            pointer-events: none;
         }
 
-        @media (max-width:520px) {
-            h1 {
-                font-size: 22px
-            }
-
-            .letter {
-                font-size: 16px
-            }
+        /* Responsive: ajustar paddings, tamaños y la decor para pantallas pequeñas */
+        @media (max-width: 520px) {
+            body { padding: 14px; }
+            .card { padding: 18px; }
+            .paper { padding: 16px; min-height: auto; }
+            h1 { font-size: 20px; }
+            .logo { width: 48px; height: 48px; font-size: 26px; border-radius: 10px; }
+            .letter { font-size: 16px; line-height: 1.6; }
+            .letter p:first-letter { font-size: 1.8rem; margin-right: 0.45rem; line-height: 0.95; }
+            .decor { right: -40px; top: -30px; font-size: 110px; }
         }
     </style>
 </head>

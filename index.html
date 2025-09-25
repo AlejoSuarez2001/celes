@@ -2,219 +2,244 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Para Celes — Carta</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&family=Dancing+Script:wght@600&display=swap"
-        rel="stylesheet">
-    <style>
-        /* Box sizing global útil para evitar sorpresas en responsive */
-        *, *::before, *::after { box-sizing: border-box; }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Para Celes — Carta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-        :root {
-            --bg: #FBF7FF;
-            --paper: #FFFDF9;
-            --accent: #6B46FF;
-            --rose: #FF6B9A;
-            --muted: #6b6b7a;
-            --radius: 20px;
-        }
+    :root {
+      --bg: #FBF7FF;
+      --paper: #FFFDF9;
+      --accent: #6B46FF;
+      --rose: #FF6B9A;
+      --muted: #6b6b7a;
+      --radius: 20px;
+    }
 
-        body {
-            margin: 0;
-            font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
-            background: radial-gradient(800px 400px at 10% 10%, rgba(107, 70, 255, 0.06), transparent),
-                linear-gradient(180deg, var(--bg), #FFF7FB);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 28px;
-            color: #111;
-        }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+      background: radial-gradient(800px 400px at 10% 10%, rgba(107, 70, 255, 0.06), transparent),
+        linear-gradient(180deg, var(--bg), #FFF7FB);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      color: #111;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 920px;
-            display: flex;
-            gap: 22px;
-            flex-direction: column;
-        }
+    .container {
+      width: 100%;
+      max-width: 920px;
+      display: flex;
+      gap: 22px;
+      flex-direction: column;
+    }
 
-        .card {
-            background: linear-gradient(180deg, var(--paper), #FFF8F9);
-            border-radius: var(--radius);
-            padding: 28px;
-            box-shadow: 0 20px 40px rgba(21, 16, 49, 0.06);
-            border: 1px solid rgba(16, 12, 38, 0.04);
-            position: relative;
-            overflow: hidden;
-        }
+    .card {
+      background: linear-gradient(180deg, var(--paper), #FFF8F9);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(21, 16, 49, 0.06);
+      border: 1px solid rgba(16, 12, 38, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
 
-        .header {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 8px;
-        }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
 
-        .logo {
-            width: 56px;
-            height: 56px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--accent), var(--rose));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 34px;
-        }
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--rose));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 34px;
+    }
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            margin: 0;
-            font-size: 26px;
-            color: var(--accent);
-        }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      font-size: 26px;
+      color: var(--accent);
+    }
 
-        .paper {
-            margin-top: 14px;
-            border-radius: 12px;
-            padding: 24px;
-            border: 1px solid rgba(16, 12, 38, 0.03);
-            background: linear-gradient(180deg, #fffefc, #fffaf8);
-            min-height: 420px;
-        }
+    .paper {
+      margin-top: 14px;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid rgba(16, 12, 38, 0.03);
+      background: linear-gradient(180deg, #fffefc, #fffaf8);
+      min-height: 420px;
+    }
 
-        /* Texto de la carta: quitar pre-wrap y permitir quiebres de palabra */
-        .letter {
-            font-family: 'Georgia', 'Playfair Display', serif;
-            font-size: 18px;
-            line-height: 1.8;
-            color: #222;
-            background: transparent;
-            border: 0;
-            outline: none;
-            resize: none;
-            width: 100%;
-            white-space: normal;              /* <--- cambió de pre-wrap a normal */
-            overflow-wrap: anywhere;          /* permite romper palabras largas */
-            word-break: break-word;
-            hyphens: auto;                    /* rompe palabras con guiones si es posible */
-        }
+    .letter {
+      font-family: 'Georgia', 'Playfair Display', serif;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #222;
+    }
 
-        .letter p {
-            margin: 0 0 1.05em 0;             /* separo párrafos con margen consistente */
-        }
+    .letter strong {
+      font-family: 'Dancing Script', cursive;
+      color: var(--rose);
+      font-size: 22px;
+    }
 
-        /* Estilo manuscrito en saludo y cierre */
-        .letter strong {
-            font-family: 'Dancing Script', cursive;
-            color: var(--rose);
-            font-size: 22px;
-        }
+    .letter p:first-letter {
+      font-size: 2.1rem;
+      font-weight: bold;
+      color: var(--accent);
+      float: left;
+      margin: 0.08rem 0.6rem 0 0;
+      line-height: 0.9;
+    }
 
-        /* Capitular (drop cap) con márgenes y line-height controlados para que no rompa las líneas */
-        .letter p:first-letter {
-            font-size: 2.1rem;
-            font-weight: bold;
-            color: var(--accent);
-            float: left;
-            margin: 0.08rem 0.6rem 0 0;
-            line-height: 0.9; /* ajusta la altura visual del drop cap */
-        }
+    .decor {
+      position: absolute;
+      right: -60px;
+      top: -40px;
+      opacity: 0.06;
+      font-size: 170px;
+      pointer-events: none;
+    }
 
-        .smallinfo {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 12px;
-            color: var(--muted);
-            font-size: 13px;
-            font-style: italic;
-        }
+    .icon-btn {
+      width: 46px;
+      height: 46px;
+      border: none;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
 
-        .decor {
-            position: absolute;
-            right: -60px;
-            top: -40px;
-            opacity: 0.06;
-            font-size: 170px;
-            pointer-events: none;
-        }
+    .icon-btn:hover {
+      background: var(--rose);
+    }
 
-        /* Responsive: ajustar paddings, tamaños y la decor para pantallas pequeñas */
-        @media (max-width: 520px) {
-            body { padding: 14px; }
-            .card { padding: 18px; }
-            .paper { padding: 16px; min-height: auto; }
-            h1 { font-size: 20px; }
-            .logo { width: 48px; height: 48px; font-size: 26px; border-radius: 10px; }
-            .letter { font-size: 16px; line-height: 1.6; }
-            .letter p:first-letter { font-size: 1.8rem; margin-right: 0.45rem; line-height: 0.95; }
-            .decor { right: -40px; top: -30px; font-size: 110px; }
-        }
-    </style>
+    .footer-btn {
+      margin-top: 18px;
+      display: flex;
+      justify-content: flex-end;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <main class="card">
-            <div class="decor">❤</div>
-            <div class="header">
-                <div class="logo">♥</div>
-                <h1>Para Celes</h1>
-            </div>
+  <div class="container">
+    <main class="card">
+      <div class="decor">❤</div>
+      <div class="header">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <div class="logo">♥</div>
+          <h1>Para Celes</h1>
+        </div>
+        <button id="playBtn" class="icon-btn">▶</button>
+      </div>
 
-            <section class="paper">
-                <div class="letter">
-                    <p><strong>Querida Boli:</strong></p>
-                    <p>
-                        Desde que te conocí, mi percepción sobre el amor cambió rotundamente. Nunca pensé que iba llegar
-                        a sentir algo por alguien como lo que siento por vos, porque sé que soy medio raro y eso hace
-                        que quizá me cueste llegar a conectar con alguien, pero vos me demostraste lo contrario. Con vos
-                        descubrí lo que es amar y, sobre todo, lo que es querer estar con una persona y tener plena
-                        confianza en ella para pasar el resto de mi vida.
-                    </p>
+      <section class="paper">
+        <div class="letter" id="letter">
+            <p><strong>Querida Boli:</strong></p>
+            <p>
+                Desde que te conocí, mi percepción sobre el amor cambió rotundamente. Nunca pensé que iba llegar
+                a sentir algo por alguien como lo que siento por vos, porque sé que soy medio raro y eso hace
+                que quizá me cueste llegar a conectar con alguien, pero vos me demostraste lo contrario. Con vos
+                descubrí lo que es amar y, sobre todo, lo que es querer estar con una persona y tener plena
+                confianza en ella para pasar el resto de mi vida.
+            </p>
 
-                    <p>
-                        Quería decirte amor, que estoy muy orgulloso de nosotros pero, sobre todo, de vos, porque siento
-                        que en el último año creciste mucho como persona y profesionalmente. Arrancaste de cero y te
-                        rebuscaste vos sola haciendo de todo, creando contenido, haciendo trenzas, metiendo cursos de
-                        publicidad y más. Poco a poco se nota que tu esfuerzo, trabajo y constancia están valiendo la
-                        pena y eso me alegra muchísimo, porque sé que es difícil, pero vos le metiste aunque a veces
-                        parecía que dabas todo y no recibías nada. Es algo que realmente admiro de vos.
-                    </p>
+            <p>
+                Quería decirte amor, que estoy muy orgulloso de nosotros pero, sobre todo, de vos, porque siento
+                que en el último año creciste mucho como persona y profesionalmente. Arrancaste de cero y te
+                rebuscaste vos sola haciendo de todo, creando contenido, haciendo trenzas, metiendo cursos de
+                publicidad y más. Poco a poco se nota que tu esfuerzo, trabajo y constancia están valiendo la
+                pena y eso me alegra muchísimo, porque sé que es difícil, pero vos le metiste aunque a veces
+                parecía que dabas todo y no recibías nada. Es algo que realmente admiro de vos.
+            </p>
 
-                    <p>
-                        Estoy muy contento de haberte podido acompañar en tu crecimiento y de que, al mismo tiempo, me
-                        enseñes a mí muchas cosas en el camino, sobre todo desde el lado sentimental. Al principio
-                        decíamos que éramos poco demostrativos y mirá ahora: yo escribiendo esto mientras me clavo un
-                        sanguche de dulce de leche que me regalaste para el desayuno.
-                    </p>
+            <p>
+                Estoy muy contento de haberte podido acompañar en tu crecimiento y de que, al mismo tiempo, me
+                enseñes a mí muchas cosas en el camino, sobre todo desde el lado sentimental. Al principio
+                decíamos que éramos poco demostrativos y mirá ahora: yo escribiendo esto mientras me clavo un
+                sanguche de dulce de leche que me regalaste para el desayuno.
+            </p>
 
-                    <p>
-                        Quiero que sigamos creciendo y aprendiendo juntos en todos los ámbitos, y que nuestra relación
-                        siga siendo tan sana como es. Con vos me siento seguro y amado, siento que siempre voy a estar
-                        con vos, que nuestro humor es el mismo, que estamos en la misma sintonía y que vemos las cosas
-                        desde el mismo lugar. Quiero una vida con vos hasta que seamos viejitos y un día se nos ocurra
-                        poner <em>"If the world was ending"</em> para recordar estos momentos y emocionarnos con
-                        <u>NUESTRO tema</u>.
-                    </p>
+            <p>
+                Quiero que sigamos creciendo y aprendiendo juntos en todos los ámbitos, y que nuestra relación
+                siga siendo tan sana como es. Con vos me siento seguro y amado, siento que siempre voy a estar
+                con vos, que nuestro humor es el mismo, que estamos en la misma sintonía y que vemos las cosas
+                desde el mismo lugar. Quiero una vida con vos hasta que seamos viejitos y un día se nos ocurra
+                poner <em>"If the world was ending"</em> para recordar estos momentos y emocionarnos con
+                <u>NUESTRO tema</u>.
+            </p>
 
-                    <p>
-                        <strong>Te amo</strong>, sos el amor de mi vida y siempre voy a estar para vos en todo lo que
-                        necesites.
-                    </p>
+            <p>
+                <strong>Te amo</strong>, sos el amor de mi vida y siempre voy a estar para vos en todo lo que
+                necesites.
+            </p>
 
-                    <p><strong>Con mucho amor, el inge.</strong></p>
-                </div>
-            </section>
+            <p><strong>Con mucho amor, el inge.</strong></p>
+        </div>
+    </section>
 
-        </main>
-    </div>
+      <div class="footer-btn">
+        <button id="downloadBtn" class="icon-btn">⬇</button>
+      </div>
+    </main>
+  </div>
+
+  <audio id="music" loop>
+    <source src="cancion.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const music = document.getElementById("music");
+    const playBtn = document.getElementById("playBtn");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    let isPlaying = false;
+
+    playBtn.addEventListener("click", () => {
+      if (isPlaying) {
+        music.pause();
+        playBtn.textContent = "▶";
+      } else {
+        music.play();
+        playBtn.textContent = "⏸";
+      }
+      isPlaying = !isPlaying;
+    });
+
+    downloadBtn.addEventListener("click", () => {
+      const letter = document.getElementById("letter").innerText;
+      const blob = new Blob([letter], { type: "text/plain;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "Carta_para_Celes.txt";
+      link.click();
+    });
+  </script>
 </body>
-
 </html>
